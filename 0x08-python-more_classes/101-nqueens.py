@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-# 101-nqueens.py
-# Brennan D Baraban <375@holbertonschool.com>
+
 """Solves the N-queens puzzle.
 
 Determines all possible solutions to placing N
@@ -97,7 +96,7 @@ def xout(board, row, col):
     for r in range(row + 1, len(board)):
         if c < 0:
             break
-        boardr][c] = "x"
+        board[r][c] = "x"
         c -= 1
 
 def recursive_solve(board, row, queens, solutions):
