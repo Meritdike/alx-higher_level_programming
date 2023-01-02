@@ -97,9 +97,8 @@ def xout(board, row, col):
     for r in range(row + 1, len(board)):
         if c < 0:
             break
-        board[r][c] = "x"
+        boardr][c] = "x"
         c -= 1
-
 
 def recursive_solve(board, row, queens, solutions):
     """Recursively solve an N-queens puzzle.
