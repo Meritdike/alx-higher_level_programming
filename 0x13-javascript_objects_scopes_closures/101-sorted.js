@@ -1,11 +1,9 @@
 #!/usr/bin/node
-const dict = require('./101-data.js').dict;
-let newDict = {};
-for (let key in dict) {
-  if (newDict[dict[key]] === undefined) {
-    newDict[dict[key]] = [key];
-  } else {
-    newDict[dict[key]].push(key);
-  }
+const dict = require('./101-data').dict;
+const dictValues = Object.values(dict).filter((elem, index, self) => self.indexOf(elem) === index);
+const newObj = {};
+for (let i = 0; i < dictValues.length; i++) {
+  const dictKeys = Object.keys(dict).filter((elem, index) => dict[elem] === dictValues[i]);
+  newObj[dictValues[i]] = dictKeys;
 }
-console.log(newDict);
+console.log(newObj);
